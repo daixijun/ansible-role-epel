@@ -8,8 +8,8 @@ branches:
     - master
 
 env:
-  - EL: 6
-  - EL: 7
+  - EL=6
+  - EL=7
 
 services:
   - docker
@@ -26,4 +26,5 @@ script:
   - molecule test
 
 notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  webhooks:
+    - https://galaxy.ansible.com/api/v1/notifications/
