@@ -1,0 +1,11 @@
+---
+- name: 安装 epel-release
+  yum:
+    name: epel-release
+    state: present
+
+- name: 替换为阿里云epel源
+  get_url:
+    url: http://mirrors.aliyun.com/repo/epel-{{ ansible_distribution_major_version }}.repo
+    dest: /etc/yum.repos.d/epel.repo
+    force: true
