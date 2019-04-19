@@ -15,6 +15,11 @@ env:
 services:
   - docker
 
+before_script:
+  - cd ../
+  - mv ansible-role-epel daixijun.epel
+  - cd daixijun.epel
+
 install:
   - pip install ansible molecule docker
 
