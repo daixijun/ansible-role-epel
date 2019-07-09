@@ -1,13 +1,13 @@
 ---
-- name: 安装 epel-release
+- name: Install epel-release
   yum:
     name: epel-release
     state: present
   when: ansible_os_family == "RedHat"
 
-- name: 替换为阿里云epel源
+- name: Replace epel repo
   get_url:
-    url: http://mirrors.aliyun.com/repo/epel-{{ ansible_distribution_major_version }}.repo
+    url: "{{ epel_repo_url }}"
     dest: /etc/yum.repos.d/epel.repo
     force: true
   when: ansible_os_family == "RedHat"
