@@ -10,6 +10,6 @@
     url: "{{ epel_repo_url }}"
     dest: /etc/yum.repos.d/epel.repo
     force: true
-  when: 
+  when:
     - ansible_os_family == "RedHat"
     - epel_repo_replace
