@@ -12,4 +12,4 @@
     force: true
   when:
     - ansible_os_family == "RedHat"
-    - epel_repo_replace
+    - epel_repo_replace|bool
