@@ -1,0 +1,13 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: False
+  tasks:
+    - name: Gather the rpm package facts
+      package_facts:
+        manager: auto
+
+    - name: Assert that package epel-release is installed
+      assert:
+        that:
+          - "'epel-release' in ansible_facts.packages"
