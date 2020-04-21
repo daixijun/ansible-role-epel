@@ -1,47 +1,40 @@
-Role Name
-=========
+# daixijun.epel
 
-RHEL/CentOS epel release
+[![Build Status](https://github.com/daixijun/ansible-role-epel/workflows/build/badge.svg)](https://github.com/daixijun/ansible-role-epel/actions)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-daixijun.epel-660198.svg?style=flat)](https://galaxy.ansible.com/daixijun/ansible-role-epel/)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/daixijun/ansible-role-epel?sort=semver)](https://github.com/daixijun/ansible-role-epel/tags)
 
-Requirements
-------------
+为 RHEL/CentOS 系列系统安装配置 epel-release 仓库
 
-Any pre-requisites that may not be covered by Ansible itself or the role should
-be mentioned here. For instance, if the role uses the EC2 module, it may be a
-good idea to mention in this section that the boto package is required.
+## 环境要求
 
-Role Variables
---------------
+* RHEL/CentOS 6.x / 7.x / 8.x
 
-A description of the settable variables for this role should go here, including
-any variables that are in defaults/main.yml, vars/main.yml, and any variables
-that can/should be set via parameters to the role. Any variables that are read
-from other roles and/or the global scope (ie. hostvars, group vars, etc.) should
-be mentioned here as well.
+## 变量
 
-Dependencies
-------------
+```yaml
+# 是否需要替换 epel 的仓库
+epel_repo_replace: false
+# epel 仓库的 repo 文件地址
+epel_repo_url: http://mirrors.aliyun.com/repo/epel-{{ ansible_distribution_major_version }}.repo
+```
 
-A list of other roles hosted on Galaxy should go here, plus any details in
-regards to parameters that may need to be set for other roles, or variables that
-are used from other roles.
+## 依赖
 
-Example Playbook
-----------------
+无
 
-Including an example of how to use your role (for instance, with variables
-passed in as parameters) is always nice for users too:
+## 使用示例
 
-    - hosts: servers
-      roles:
-         - { role: daixijun.epel }
+```yaml
+- hosts: servers
+  roles:
+    - { role: daixijun.epel }
+```
 
-License
--------
+## License
 
 BSD
 
-Author Information
-------------------
+## 维护者
 
-Xijun Dai <daixijun1990@gmail.com>
+* Xijun Dai <daixijun1990@gmail.com>
